@@ -53,5 +53,22 @@
       </div>
       <hr class="border-gray-200 my-8">
     </header>
+    <main class="w-[80%] mx-auto">
+
+            <!-- available job section -->
+        <div class=" flex justify-between items-center space-y-5">
+            <h2 class="text-[#002C5C] text-xl font-bold">Available Jobs</h2>
+            <p class="text-gray-500 all-count-class"><span id="allCount" >0</span> jobs</p>
+            <p class="text-gray-500 interview-count-class hidden"><span id="interviewCount">0</span> jobs</p>
+            <p class="text-gray-500 rejected-count-class hidden"><span id="rejectedCount">0</span> jobs</p>
+        </div>
+                <!-- toggle button section -->
+        <div class="button">
+            <button onclick="toggleStyle('all-filter-btn')" class="btn btn-info text-white" id="all-filter-btn">All</button>
+            <button onclick="toggleStyle('interview-filter-btn')" class="btn bg-base-100 text-gray-500" id="interview-filter-btn">Interview</button>
+            <button onclick="toggleStyle('rejected-filter-btn')" class="btn bg-base-100 text-gray-500" id="rejected-filter-btn"> Rejected</button>
+        </div>
+
+    </main>
 </body>
 </html>
