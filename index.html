@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Application Tracker</title>
-     <!-- tailwind+daisyUI -->
+
+    <!-- tailwind+daisyUI -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
@@ -33,14 +34,14 @@
             font-family: "Geist", sans-serif;
         }
     </style>
-</head>
-<body>
-     <header class="w-[80%] mx-auto ">
+  </head>
+  <body>
+    <header class="w-[80%] mx-auto ">
       <h1 class="text-[#002C5C] my-8 text-3xl font-bold">Job Application Tracker</h1>
       <div class="grid grid-cols-3 gap-5 items-center">
         <div class="bg-base-200 border border-gray-200 p-4 rounded-xl">
           <h5 class="text-[#323b49]">Total</h5>
-          <p class="text-[#002C5C] font-bold total-job"  id="total">0</p>
+          <p class="text-[#002C5C] font-bold " id="total">0</p>
         </div>
         <div class="bg-base-200 border border-gray-200 p-4 rounded-xl">
           <h5 class="text-[#323b49]">Interview</h5>
@@ -53,22 +54,25 @@
       </div>
       <hr class="border-gray-200 my-8">
     </header>
+
     <main class="w-[80%] mx-auto">
 
-            <!-- available job section -->
+        <!-- available job section -->
+         <!-- <span class="total-job">0</span>of -->
         <div class=" flex justify-between items-center space-y-5">
             <h2 class="text-[#002C5C] text-xl font-bold">Available Jobs</h2>
             <p class="text-gray-500 all-count-class"><span id="allCount" >0</span> jobs</p>
-            <p class="text-gray-500 interview-count-class hidden"><span id="interviewCount">0</span> jobs</p>
-            <p class="text-gray-500 rejected-count-class hidden"><span id="rejectedCount">0</span> jobs</p>
+            <p class="text-gray-500 interview-count-class hidden"><span id="interviewCount">0</span> of <span id="total-job1">0</span> jobs</p>
+            <p class="text-gray-500 rejected-count-class hidden"><span id="rejectedCount">0</span> of  <span id="total-job2">0</span> jobs</p>
         </div>
-                <!-- toggle button section -->
+
+        <!-- toggle button section -->
         <div class="button">
             <button onclick="toggleStyle('all-filter-btn')" class="btn btn-info text-white" id="all-filter-btn">All</button>
             <button onclick="toggleStyle('interview-filter-btn')" class="btn bg-base-100 text-gray-500" id="interview-filter-btn">Interview</button>
             <button onclick="toggleStyle('rejected-filter-btn')" class="btn bg-base-100 text-gray-500" id="rejected-filter-btn"> Rejected</button>
         </div>
-         <!-- filter section -->
+        <!-- filter section -->
          <section id="filtered-section">
 
          </section>
@@ -303,7 +307,7 @@
             
         </section>
 
-             <!-- No jobs section -->
+        <!-- No jobs section -->
         <section id="no-job" class="bg-base-200 mt-7 rounded-xl hidden ">
                 <div class="p-32 ">
                     <div class="flex justify-center items-center">
@@ -316,8 +320,9 @@
                 </div>
         </section>
     </main>
-
-    <!-- JS Function -->
-    <script src="./script.js"></script>
-</body>
+    
+    <!-- JS connection -->
+    <!-- <script src="./scriptJS/script.js"></script> -->
+     <script src="script.js"></script>
+  </body>
 </html>
