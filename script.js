@@ -33,6 +33,7 @@ function calculation() {
 }
 calculation();
 
+
 // hide count function
 
 function hideCount()
@@ -100,10 +101,22 @@ function toggleStyle(id) {
             renderRejected();
         }
     }
+    // else if(id==="all-filter-btn")
+    // {
+    //     document.querySelector(".all-count-class").classList.remove("hidden");
+    //     allCardsSection.classList.remove("hidden"); 
+    // }
     else if(id==="all-filter-btn")
     {
         document.querySelector(".all-count-class").classList.remove("hidden");
-        allCardsSection.classList.remove("hidden"); 
+        if(allCardsSection.children.length===0)
+        {
+          noJobSection.classList.remove("hidden");
+        }
+        else
+        {
+          allCardsSection.classList.remove("hidden"); 
+        }
     }
 }
 
@@ -178,6 +191,44 @@ mainContainer.addEventListener("click", function (event) {
     calculation();
   }
 
+
+else if(event.target.closest(".delete-btn"))
+{
+  let card;
+
+  if(currentStatus==="interview-filter-btn" || currentStatus==="rejected-filter-btn")
+  {
+    card=event.target.closest("div[data-company]");
+  }
+  else
+  {
+    card=event.target.closest(".card-section");
+  }
+
+  if(!card) return;
+
+  if(currentStatus==="interview-filter-btn")
+  {
+    const company=card.getAttribute("data-company");
+    interviewList=interviewList.filter(item=>item.companyName!==company);
+    renderInterview();
+  }
+  else if(currentStatus==="rejected-filter-btn")
+  {
+    const company=card.getAttribute("data-company");
+    rejectedList=rejectedList.filter(item=> item.companyName!==company);
+    renderRejected();
+  }
+  else
+  {
+    card.remove();
+  }
+  calculation();
+
+}
+
+
+  
 });
 
 function renderInterview() {
