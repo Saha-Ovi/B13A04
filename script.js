@@ -21,6 +21,8 @@ const allCardsSection = document.getElementById("allCards");
 const filterSection = document.getElementById("filtered-section");
 const noJobSection = document.getElementById("no-job");
 
+// calculation function
+
 function calculation() {
   total.innerText = allCardsSection.children.length;
   interviewCount.innerText = interviewList.length;
@@ -43,6 +45,7 @@ function hideCount()
     document.querySelector(".rejected-count-class").classList.add("hidden");
 }
 
+// toggle function
 
 function toggleStyle(id) {
   // add all the button
@@ -119,6 +122,8 @@ function toggleStyle(id) {
         }
     }
 }
+
+// main function
 
 mainContainer.addEventListener("click", function (event) {
   
@@ -231,6 +236,8 @@ else if(event.target.closest(".delete-btn"))
   
 });
 
+// function render interview
+
 function renderInterview() {
   filterSection.innerHTML = " ";
   for (let interview of interviewList) {
@@ -275,6 +282,8 @@ function renderInterview() {
     filterSection.appendChild(divSection);
   }
 }
+
+// function render rejected
 
 function renderRejected() {
   filterSection.innerHTML = " ";
